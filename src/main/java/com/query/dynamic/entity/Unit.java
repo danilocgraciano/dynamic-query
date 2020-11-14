@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Unit {
 
 	@Id
-	private String id;
+	private String code;
 
 	@NotBlank(message = "Description is required")
 	private String description;

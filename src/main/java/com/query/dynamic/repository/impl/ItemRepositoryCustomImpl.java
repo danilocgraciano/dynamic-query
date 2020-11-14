@@ -37,9 +37,9 @@ public class ItemRepositoryCustomImpl extends AbstractRepository implements Item
 				where = "";
 			}
 
-			if (e.getUnit() != null && e.getUnit().getId() != null) {
+			if (e.getUnit() != null && e.getUnit().getCode() != null) {
 				query += where + and + "item.unit.id = ?" + (param++);
-				params.add(e.getUnit().getId());
+				params.add(e.getUnit().getCode());
 				and = " and ";
 				where = "";
 			}

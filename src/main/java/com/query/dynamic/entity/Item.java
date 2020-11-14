@@ -29,7 +29,7 @@ public class Item {
 	private Double unitPrice;
 
 	@ManyToOne
-	@JoinColumn(name = "unit_id")
+	@JoinColumn(name = "unit_code")
 	private Unit unit;
 
 }

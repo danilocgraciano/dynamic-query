@@ -39,7 +39,7 @@ public class UnitRepositoryTest {
 		em.flush();
 		em.clear();
 
-		Optional<Unit> created = repository.findById(unit.getId());
+		Optional<Unit> created = repository.findById(unit.getCode());
 		assertTrue(created.isPresent());
 
 	}
@@ -118,10 +118,10 @@ public class UnitRepositoryTest {
 	}
 
 	@Test(expected = PersistenceException.class)
-	public void shouldNotCreateWithoutId() {
+	public void shouldNotCreateWithoutCode() {
 
 		var unit = new UnitBuilder().withDefaults().build();
-		unit.setId(null);
+		unit.setCode(null);
 		em.persist(unit);
 
 		em.flush();
